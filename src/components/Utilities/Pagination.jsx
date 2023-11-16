@@ -6,12 +6,12 @@ const Pagination = ({ page, lastPage, setPage }) => {
     });
   };
 
-  const handleNextPage = () => {
-    setPage((prevState) => prevState + 1);
+  const handlePrevPage = () => {
+    setPage((prevState) => prevState - 1);
     scrollTop();
   };
 
-  const handlePrevPage = () => {
+  const handleNextPage = () => {
     setPage((prevState) => prevState + 1);
     scrollTop();
   };
@@ -19,12 +19,15 @@ const Pagination = ({ page, lastPage, setPage }) => {
   return (
     <>
       <div className="flex justify-center items-center py-4 px-2 gap-4 text-primary text-xl">
-        <button
-          onClick={handlePrevPage}
-          className="transition-all hover:text-accent "
-        >
-          Prev
-        </button>
+        {page <= 1 ? null : (
+          <button
+            onClick={handlePrevPage}
+            className="transition-all hover:text-accent "
+          >
+            Prev
+          </button>
+        )}
+
         <p>
           {page} of {lastPage}
         </p>
