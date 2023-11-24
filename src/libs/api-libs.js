@@ -12,6 +12,7 @@ export const getNestedAnimeResponse = async (resource, objectProperty) => {
   return response.data.flatMap((item) => item[objectProperty]);
 };
 
+export const getAnimeGenres = async () => {};
 //random recommendations anime data
 export const reproduce = (data, gap = 8) => {
   const first = ~~(Math.random() * (data.length - gap) + 1);

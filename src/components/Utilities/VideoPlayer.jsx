@@ -4,25 +4,25 @@ import { useState } from "react";
 import Youtube from "react-youtube";
 
 const VideoPlayer = ({ youtubeId }) => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState();
 
   const handleVideoPlayer = () => {
     setIsOpen((prevState) => !prevState);
   };
 
   const option = {
-    width: "500",
-    height: "400",
+    width: "480",
+    height: "350",
   };
 
   const Player = () => {
     return (
-      <div className="fixed bottom-2 right-2">
+      <div>
         <bottom
           onClick={handleVideoPlayer}
-          className="cursor-pointer text-color-primary float-right bg-color-secondary px-3 mb-1"
+          className="rounded cursor-pointer text-color-dark float-left bg-color-primary hover:bg-color-accent px-3 mb-1 transition-all shadow-xl"
         >
-          X
+          Close
         </bottom>
         {/* <buttton onClick={handleVideoPlayer} className="text-color-primary float-right bg-color-secondary px-3 mb-1 cursor-pointer">X</buttton> */}
         <Youtube
