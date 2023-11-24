@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import Header from "@/components/Dashboard/header";
+import Header from "@/components/Dashboard/Header";
 
 const Page = () => {
   return (
