@@ -17,11 +17,11 @@ body {
 }
 
 img {
-  width: 100%;
-  min-height: 250px;
-  max-height: 600px;
-  height: auto;
   transition: 0.3s ease all;
+  -webkit-transition: 0.3s ease all;
+  -moz-transition: 0.3s ease all;
+  -ms-transition: 0.3s ease all;
+  -o-transition: 0.3s ease all;
 }
 
 img:hover {

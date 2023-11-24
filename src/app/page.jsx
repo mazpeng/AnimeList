@@ -12,12 +12,12 @@ const Page = async () => {
   // );
   // const topAnime = await response.json();
 
-  const topAnime = await getAnimeResponse("top/anime", "limit=12");
+  const topAnime = await getAnimeResponse("top/anime", "limit=10");
   let recommendAnime = await getNestedAnimeResponse(
     "recommendations/anime",
     "entry"
   );
-  recommendAnime = reproduce(recommendAnime, 8);
+  recommendAnime = reproduce(recommendAnime, 5);
   // let recommendedAnime = await getNestedAnimeResponse(
   //   "recommendations/anime",
   //   "entry"
@@ -28,14 +28,14 @@ const Page = async () => {
     <>
       <section>
         <Header
-          title="Paling Populer"
+          title="Rating Terbanyak"
           linkTitle="Lihat Semua"
           linkHref="/populer"
         />
         <AnimeList api={topAnime} />
       </section>
       <section>
-        <Header title="Recommendations" />
+        <Header title="Rekomendasi" />
         <AnimeList api={recommendAnime} />
       </section>
     </>
